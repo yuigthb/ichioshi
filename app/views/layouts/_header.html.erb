@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "イチオシ", '#', id: "logo" %>
+    <%= link_to "イチオシ", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
@@ -11,10 +11,10 @@
           <li><%= link_to 'サインアップ', new_user_registration_path %></li>
           <li></li><%= link_to 'ログイン', new_user_session_path %></li>
         <% end %>
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "About",   '#' %></li>
-        <li><%= link_to "Setting",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
+        <li><%= link_to "Home",  root_path %></li>
+        <li><%= link_to "About",   about_path %></li>
+        <li><%= link_to "Setting",   setting_path %></li>
+        <li><%= link_to "Help",   help_path %></li>
       </ul>
     </nav>
   </div>
