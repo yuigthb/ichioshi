@@ -17,7 +17,6 @@ gem 'jbuilder',     '2.7.0'
 
 # Devise
 gem 'devise'
-gem 'omniauth'
 gem 'omniauth-twitter'
 
 group :development, :test do

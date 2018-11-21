@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+自分のイチオシの品を10個までリスト化して共有できるwebアプリ
 
 Things you may want to cover:
 

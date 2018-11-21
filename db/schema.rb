@@ -13,34 +13,36 @@
 ActiveRecord::Schema.define(version: 20181121020746) do
 
   create_table "contents", force: :cascade do |t|
-    t.integer "uid", limit: 8
-    t.integer "seq"
-    t.string "title"
-    t.string "text"
+    t.string "uid", null: false
+    t.integer "seq", null: false
+    t.string "title", null: false
+    t.string "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "favs", force: :cascade do |t|
-    t.integer "uid", limit: 8
-    t.integer "fav"
+  create_table "favorites", force: :cascade do |t|
+    t.string "uid", null: false
+    t.integer "favorite", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.integer "uid"
-    t.string "provider"
-    t.string "name"
-    t.string "nickname"
-    t.string "password"
-    t.string "image"
-    t.string "location"
+    t.string "uid", null: false
+    t.string "provider", null: false
+    t.string "name", null: false
+    t.string "nickname", null: false
+    t.string "password", null: false
+    t.string "image", null: false
+    t.string "location", null: false
     t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 
