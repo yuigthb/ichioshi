@@ -6,9 +6,11 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:twitter]
          
   def self.find_for_oauth(auth)
+    #ユーザーデータ取得
     user = User.where(uid: auth.uid, provider: auth.provider).first
  
     unless user
+    #登録されてなかったらauthからユーザーデータを生成して保存
       user = User.create(
         uid:      auth.uid,
         provider: auth.provider,
@@ -21,5 +23,6 @@ class User < ApplicationRecord
     end
     user
   end
+  
   
 end

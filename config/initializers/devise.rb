@@ -256,7 +256,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :twitter, ENV['TWITTER_API_KEY'] , ENV['TWITTER_API_SECRET']
+  config.omniauth :twitter, ENV['TWITTER_API_KEY'] , ENV['TWITTER_API_SECRET'], callback_url: "https://791ddab225954ff6bcf820803fa0a8d1.vfs.cloud9.us-east-2.amazonaws.com/users/auth/twitter/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

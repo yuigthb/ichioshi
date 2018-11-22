@@ -17,7 +17,11 @@ gem 'jbuilder',     '2.7.0'
 
 # Devise
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-twitter'
+
+#dotenv
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
