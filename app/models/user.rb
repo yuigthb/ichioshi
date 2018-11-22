@@ -8,20 +8,28 @@ class User < ApplicationRecord
   def self.find_for_oauth(auth)
     #ユーザーデータ取得
     user = User.where(uid: auth.uid, provider: auth.provider).first
- 
+    
     unless user
     #登録されてなかったらauthからユーザーデータを生成して保存
       user = User.create(
         uid:      auth.uid,
-        provider: auth.provider,
-        password: Devise.friendly_token[0, 20],
-        image: auth.info.image,
         name: auth.info.name,
         nickname: auth.info.nickname,
-        location: auth.info.location
-        )
+        image: auth.info.image,
+        provider: auth.provider,
+        email: User.dummy_email(auth),
+        encrypted_password: Devise.friendly_token[0,20],
+        remember_created_at: Time.current,
+      )
     end
+    
     user
+  end
+  
+  private
+  
+  def self.dummy_email(auth)
+    "#{auth.uid}-#{auth.provider}@example.com"
   end
   
   
